@@ -9,4 +9,5 @@ def start(request):
 def recipes(request, id):
     return render(request, 'recipes/pages/recipe-view.html', {
         'recipe' : [make_recipe()],
+        'is_datail_page' : True,
     })
