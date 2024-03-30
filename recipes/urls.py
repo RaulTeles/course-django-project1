@@ -8,6 +8,7 @@ app_name = 'recipes'
 urlpatterns = [
     path('', views.start, name='home'),
     path('recipes/<int:id>/', views.recipes, name='recipe'),
+    path('recipes/category/<int:category_id>/', views.category, name='category'),
 ]
 
 #servindo os arquivos de imagens para quando serem clicadas, abrirem uma url sem erro

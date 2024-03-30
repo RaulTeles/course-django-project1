@@ -25,7 +25,7 @@ class Recipe(models.Model):
     is_publish = models.BooleanField()
     cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d')
     #quando a categoria for deletada, o campo da receita ficará como NUll
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) #Criando um atributo para fazer a relação da classe Category com a de Recipes
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, default=None) #Criando um atributo para fazer a relação da classe Category com a de Recipes
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) #Criando um atributo para fazer a relação da classe Category com a de Recipes
 
     def __str__(self):
