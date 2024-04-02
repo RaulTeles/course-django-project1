@@ -11,7 +11,8 @@ def start(request):
     })
 
 def recipes(request, id):
-    Recipes = models.Recipe.objects.filter(id=id) 
+
+    Recipes = get_object_or_404(models.Recipe, id=id, is_publish=True,) 
 
     return render(request, 'recipes/pages/recipe-view.html', {
         'recipe' : Recipes,
